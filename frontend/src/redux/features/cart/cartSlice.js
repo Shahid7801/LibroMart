@@ -15,10 +15,14 @@ const cartSlice = createSlice({
                 state.cartItems.push(action.payload)
                 Swal.fire({
                     position: "top-end",
-                    icon: "success",
+                    // icon: "success",
+                    
                     title: "Product Added to the Cart",
                     showConfirmButton: false,
-                    timer: 1500
+                    timer: 20000,
+                    customClass: {
+                        popup: 'custom-swal-popup', // Custom class for the entire SweetAlert2 box
+                    }
                   });
             } else(
                 Swal.fire({
@@ -30,6 +34,7 @@ const cartSlice = createSlice({
                     cancelButtonColor: "#d33",
                     confirmButtonText: "OK!"
                   })
+             
             )
         },
         removeFromCart: (state, action) => {
@@ -44,3 +49,5 @@ const cartSlice = createSlice({
 // export the actions   
 export const  {addToCart, removeFromCart, clearCart} = cartSlice.actions;
 export default cartSlice.reducer;
+
+

@@ -69,5 +69,11 @@ export const AuthProvide = ({children}) => {
         <AuthContext.Provider value={value}>
             {children}
         </AuthContext.Provider>
-    )
-}
+    );
+};
+
+
+
+
+
+

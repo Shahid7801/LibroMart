@@ -6,6 +6,7 @@ import Footer from './components/Footer'
 import { AuthProvide } from './context/AuthContext'
 import { useEffect, useState } from 'react'
 import Loading from './components/Loading'
+import ScrollToTop from './pages/scrollTop'
 
 function App() {
 
@@ -29,8 +30,9 @@ function App() {
   return (
     <>
       <AuthProvide>
+        <ScrollToTop/>
         <Navbar />
-        <main className='min-h-screen max-w-screen-2xl mx-auto px-4 py-6 font-primary'>
+        <main className='min-h-screen max-w-screen-2xl w-full mx-auto pt-6 font-primary'>
           <Outlet />
         </main>
         <Footer />

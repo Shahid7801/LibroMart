@@ -8,6 +8,7 @@ import CheckoutPage from "../pages/books/CheckoutPage";
 import SingleBook from "../pages/books/SingleBook";
 import PrivateRoute from "./PrivateRoute";
 import OrderPage from "../pages/books/OrderPage";
+import Payment from "../pages/books/Payment";
 import AdminRoute from "./AdminRoute";
 import AdminLogin from "../components/AdminLogin";
 import DashboardLayout from "../pages/dashboard/DashboardLayout";
@@ -16,6 +17,11 @@ import ManageBooks from "../pages/dashboard/manageBooks/ManageBooks";
 import AddBook from "../pages/dashboard/addBook/AddBook";
 import UpdateBook from "../pages/dashboard/EditBook/UpdateBook";
 import UserDashboard from "../pages/dashboard/users/UserDashboard";
+import CustomerSupport from "../pages/books/customer";
+import AboutUs from "../pages/books/About";
+import ServicesPage from "../pages/books/Service";
+import FAQPage from "../pages/books/Faq";
+import RevenueChart from "../pages/dashboard/RevenueChart";
 
 const router = createBrowserRouter([
     {
@@ -32,7 +38,7 @@ const router = createBrowserRouter([
         },
         {
             path: "/about",
-            element: <div>About</div>
+            element: <AboutUs/>
         },
         {
           path: "/login",
@@ -51,8 +57,28 @@ const router = createBrowserRouter([
           element: <PrivateRoute><CheckoutPage/></PrivateRoute>
         },
         {
+          path: "/payment",
+          element: <PrivateRoute><Payment/></PrivateRoute>
+        },
+        {
           path: "/books/:id",
           element: <SingleBook/>
+        },
+        {
+          path: "/customer",
+          element: <CustomerSupport/>
+        },
+        {
+          path:"/about",
+          element:<AboutUs/>
+        },
+        {
+          path:"/service",
+          element:<ServicesPage/>
+        },
+        {
+          path:"/faq",
+          element:<FAQPage/>
         },
         {
           path: "/user-dashboard",
@@ -91,6 +117,12 @@ const router = createBrowserRouter([
           path: "manage-books",
           element: <AdminRoute>
             <ManageBooks/>
+          </AdminRoute>
+        },
+        {
+          path: "/dashboard/revenueChart",
+          element: <AdminRoute>
+            <RevenueChart/>
           </AdminRoute>
         }
       ]
